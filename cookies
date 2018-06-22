@@ -1,0 +1,16 @@
+A cookie is basically just an item in a dictionary. Each item has a key and a value. 
+For authentication, the key could be something like 'username' and the value would be the username.
+Each time you make a request to a website, your browser will include the cookies in the request, and
+the host server will check the cookies. So authentication can be done automatically like that.
+
+To set a cookie, you just have to add it to the response the server sends back after requests. 
+The browser will then add the cookie upon receiving the response.
+
+There are different options you can configure for the cookie server side, like expiration times or encryption. 
+An encrypted cookie is often referred to as a signed cookie. Basically the server encrypts the key and value in
+the dictionary item, so only the server can make use of the information. So then cookie would be secure.
+
+A browser will save the cookies set by the server. In the HTTP header of every request the browser makes to that
+server, it will add the cookies. It will only add cookies for the domains that set them. 
+Example.com can set a cookie and also add options in the HTTP header for the browsers to send the cookie back to
+subdomains, like sub.example.com. It would be unacceptable for a browser to ever sends cookies to a different domain.
